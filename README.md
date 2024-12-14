@@ -11,18 +11,18 @@ Evencity is a comprehensive event management platform that allows users to disco
 ## Deployment Links
 
 - Frontend: [https://evencity.vercel.app](https://evencity.vercel.app)
-- Backend API: [https://evencity-api.onrender.com](https://evencity-api.onrender.com)
+- Backend API: [https://evencity.onrender.com](https://evencity.onrender.com)
 
 ## Test Login Credentials
 
 - Admin Account:
 
-  - Email: admin@evencity.com
-  - Password: admin123
+  - Email: admin@test.com
+  - Password: Admin1234
 
 - User Account:
-  - Email: user@evencity.com
-  - Password: user123
+  - Email: user@test.com
+  - Password: User1234
 
 ## Feature Checklist
 
@@ -68,7 +68,6 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
