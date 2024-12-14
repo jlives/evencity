@@ -134,39 +134,39 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className='h-full bg-gray-900 overflow-y-auto p-4 md:p-8'>
-      <div className='max-w-2xl mx-auto'>
-        <h1 className='text-2xl font-bold text-gray-100 mb-8'>
+    <div className="h-full bg-white overflow-y-auto p-4 md:p-8">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-2xl font-bold text-gray-700 mb-8">
           Create New Event
         </h1>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className='bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-700'
+          className="bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-700"
         >
-          <div className='space-y-6'>
+          <div className="space-y-6">
             {/* Image URL */}
             <div>
-              <label className='block text-sm font-medium text-gray-300 mb-2'>
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Event Image URL
               </label>
               <input
-                type='url'
+                type="url"
                 {...register("imageUrl")}
                 className={`w-full px-4 py-2 rounded-lg border ${
                   errors.imageUrl ? "border-red-500" : "border-gray-600"
                 } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
               />
               {errors.imageUrl && (
-                <p className='mt-1 text-sm text-red-500'>
+                <p className="mt-1 text-sm text-red-500">
                   {errors.imageUrl.message}
                 </p>
               )}
               {imageUrl && (
-                <div className='mt-4'>
+                <div className="mt-4">
                   <img
                     src={imageUrl}
-                    alt='Event preview'
-                    className='max-h-48 rounded-lg'
+                    alt="Event preview"
+                    className="max-h-48 rounded-lg"
                     onError={(e) => {
                       e.target.onerror = null;
                       toast.error("Invalid image URL");
@@ -178,18 +178,18 @@ const CreateEvent = () => {
 
             {/* Name */}
             <div>
-              <label className='block text-sm font-medium text-gray-300 mb-2'>
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Event Name
               </label>
               <input
-                type='text'
+                type="text"
                 {...register("name")}
                 className={`w-full px-4 py-2 rounded-lg border ${
                   errors.name ? "border-red-500" : "border-gray-600"
                 } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
               />
               {errors.name && (
-                <p className='mt-1 text-sm text-red-500'>
+                <p className="mt-1 text-sm text-red-500">
                   {errors.name.message}
                 </p>
               )}
@@ -197,7 +197,7 @@ const CreateEvent = () => {
 
             {/* Category */}
             <div>
-              <label className='block text-sm font-medium text-gray-300 mb-2'>
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Category
               </label>
               <select
@@ -206,53 +206,53 @@ const CreateEvent = () => {
                   errors.category ? "border-red-500" : "border-gray-600"
                 } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
               >
-                <option value=''>Select category</option>
-                <option value='conference'>Conference</option>
-                <option value='workshop'>Workshop</option>
-                <option value='seminar'>Seminar</option>
-                <option value='networking'>Networking</option>
-                <option value='social'>Social</option>
-                <option value='other'>Other</option>
+                <option value="">Select category</option>
+                <option value="conference">Conference</option>
+                <option value="workshop">Workshop</option>
+                <option value="seminar">Seminar</option>
+                <option value="networking">Networking</option>
+                <option value="social">Social</option>
+                <option value="other">Other</option>
               </select>
               {errors.category && (
-                <p className='mt-1 text-sm text-red-500'>
+                <p className="mt-1 text-sm text-red-500">
                   {errors.category.message}
                 </p>
               )}
             </div>
 
             {/* Dates */}
-            <div className='grid grid-cols-2 gap-6'>
+            <div className="grid grid-cols-2 gap-6">
               <div>
-                <label className='block text-sm font-medium text-gray-300 mb-2'>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Start Date & Time
                 </label>
                 <input
-                  type='datetime-local'
+                  type="datetime-local"
                   {...register("startDateTime")}
                   className={`w-full px-4 py-2 rounded-lg border ${
                     errors.startDateTime ? "border-red-500" : "border-gray-600"
                   } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
                 />
                 {errors.startDateTime && (
-                  <p className='mt-1 text-sm text-red-500'>
+                  <p className="mt-1 text-sm text-red-500">
                     {errors.startDateTime.message}
                   </p>
                 )}
               </div>
               <div>
-                <label className='block text-sm font-medium text-gray-300 mb-2'>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   End Date & Time
                 </label>
                 <input
-                  type='datetime-local'
+                  type="datetime-local"
                   {...register("endDateTime")}
                   className={`w-full px-4 py-2 rounded-lg border ${
                     errors.endDateTime ? "border-red-500" : "border-gray-600"
                   } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
                 />
                 {errors.endDateTime && (
-                  <p className='mt-1 text-sm text-red-500'>
+                  <p className="mt-1 text-sm text-red-500">
                     {errors.endDateTime.message}
                   </p>
                 )}
@@ -261,115 +261,115 @@ const CreateEvent = () => {
 
             {/* Location */}
             <div>
-              <label className='block text-sm font-medium text-gray-300 mb-2'>
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Location
               </label>
               <input
-                type='text'
+                type="text"
                 {...register("location")}
                 className={`w-full px-4 py-2 rounded-lg border ${
                   errors.location ? "border-red-500" : "border-gray-600"
                 } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
               />
               {errors.location && (
-                <p className='mt-1 text-sm text-red-500'>
+                <p className="mt-1 text-sm text-red-500">
                   {errors.location.message}
                 </p>
               )}
             </div>
 
             {/* Venue Details */}
-            <div className='space-y-4'>
-              <h3 className='text-lg font-medium text-gray-200'>
+            <div className="space-y-4">
+              <h3 className="text-lg font-medium text-gray-200">
                 Venue Details
               </h3>
               <div>
-                <label className='block text-sm font-medium text-gray-300 mb-2'>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Venue Name
                 </label>
                 <input
-                  type='text'
+                  type="text"
                   {...register("venue.name")}
-                  className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
               <div>
-                <label className='block text-sm font-medium text-gray-300 mb-2'>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Address
                 </label>
                 <input
-                  type='text'
+                  type="text"
                   {...register("venue.address")}
-                  className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
-              <div className='grid grid-cols-3 gap-4'>
+              <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <label className='block text-sm font-medium text-gray-300 mb-2'>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     City
                   </label>
                   <input
-                    type='text'
+                    type="text"
                     {...register("venue.city")}
-                    className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <div>
-                  <label className='block text-sm font-medium text-gray-300 mb-2'>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     State
                   </label>
                   <input
-                    type='text'
+                    type="text"
                     {...register("venue.state")}
-                    className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <div>
-                  <label className='block text-sm font-medium text-gray-300 mb-2'>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     ZIP Code
                   </label>
                   <input
-                    type='text'
+                    type="text"
                     {...register("venue.zipCode")}
-                    className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
             </div>
 
             {/* Capacity and Price */}
-            <div className='grid grid-cols-2 gap-6'>
+            <div className="grid grid-cols-2 gap-6">
               <div>
-                <label className='block text-sm font-medium text-gray-300 mb-2'>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Capacity
                 </label>
                 <input
-                  type='number'
+                  type="number"
                   {...register("capacity")}
                   className={`w-full px-4 py-2 rounded-lg border ${
                     errors.capacity ? "border-red-500" : "border-gray-600"
                   } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
                 />
                 {errors.capacity && (
-                  <p className='mt-1 text-sm text-red-500'>
+                  <p className="mt-1 text-sm text-red-500">
                     {errors.capacity.message}
                   </p>
                 )}
               </div>
               <div>
-                <label className='block text-sm font-medium text-gray-300 mb-2'>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Ticket Price ($)
                 </label>
                 <input
-                  type='number'
-                  step='0.01'
+                  type="number"
+                  step="0.01"
                   {...register("ticketPrice")}
                   className={`w-full px-4 py-2 rounded-lg border ${
                     errors.ticketPrice ? "border-red-500" : "border-gray-600"
                   } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
                 />
                 {errors.ticketPrice && (
-                  <p className='mt-1 text-sm text-red-500'>
+                  <p className="mt-1 text-sm text-red-500">
                     {errors.ticketPrice.message}
                   </p>
                 )}
@@ -378,94 +378,94 @@ const CreateEvent = () => {
 
             {/* Tags */}
             <div>
-              <label className='block text-sm font-medium text-gray-300 mb-2'>
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Tags (comma-separated)
               </label>
               <input
-                type='text'
+                type="text"
                 onChange={handleTagsChange}
-                placeholder='e.g., blockchain, web3, ethereum'
-                className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                placeholder="e.g., blockchain, web3, ethereum"
+                className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
             {/* Description */}
             <div>
-              <label className='block text-sm font-medium text-gray-300 mb-2'>
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Description
               </label>
               <textarea
                 {...register("description")}
-                rows='4'
+                rows="4"
                 className={`w-full px-4 py-2 rounded-lg border ${
                   errors.description ? "border-red-500" : "border-gray-600"
                 } bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500`}
               ></textarea>
               {errors.description && (
-                <p className='mt-1 text-sm text-red-500'>
+                <p className="mt-1 text-sm text-red-500">
                   {errors.description.message}
                 </p>
               )}
             </div>
 
             {/* Additional Settings */}
-            <div className='space-y-4'>
-              <div className='flex items-center'>
+            <div className="space-y-4">
+              <div className="flex items-center">
                 <input
-                  type='checkbox'
+                  type="checkbox"
                   {...register("isPrivate")}
-                  className='h-4 w-4 rounded border-gray-600 bg-gray-700 text-blue-600'
+                  className="h-4 w-4 rounded border-gray-600 bg-gray-700 text-blue-600"
                 />
-                <label className='ml-2 text-sm text-gray-300'>
+                <label className="ml-2 text-sm text-gray-300">
                   Private Event
                 </label>
               </div>
 
               <div>
-                <label className='block text-sm font-medium text-gray-300 mb-2'>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Max Tickets Per User
                 </label>
                 <input
-                  type='number'
+                  type="number"
                   {...register("maxTicketsPerUser")}
-                  min='1'
-                  className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  min="1"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
               <div>
-                <label className='block text-sm font-medium text-gray-300 mb-2'>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Registration Deadline
                 </label>
                 <input
-                  type='datetime-local'
+                  type="datetime-local"
                   {...register("registrationDeadline")}
-                  className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 {errors.registrationDeadline && (
-                  <p className='mt-1 text-sm text-red-500'>
+                  <p className="mt-1 text-sm text-red-500">
                     {errors.registrationDeadline.message}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className='block text-sm font-medium text-gray-300 mb-2'>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Cancellation Policy
                 </label>
                 <textarea
                   {...register("cancellationPolicy")}
-                  rows='3'
-                  className='w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  rows="3"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 ></textarea>
               </div>
             </div>
 
             {/* Submit Button */}
-            <div className='flex justify-end'>
+            <div className="flex justify-end">
               <button
-                type='submit'
-                className='px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors'
+                type="submit"
+                className="px-6 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-950 transition-colors"
               >
                 Create Event
               </button>

@@ -3,9 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import {
   FaBars,
   FaTimes,
-  FaTicketAlt,
-  FaEllo,
-  FaAccusoft,
+  FaClipboard,
+  FaCottonBureau,
+  FaRegChartBar,
 } from "react-icons/fa";
 import { useAuth } from "../contexts/AuthContext";
 const Navbar = () => {
@@ -19,46 +19,46 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='bg-gray-900 border-b border-gray-800 px-4 md:px-6 py-4'>
-      <div className='flex justify-between items-center'>
-        <div className='flex items-center space-x-4'>
-          <Link to='/' className='flex items-center space-x-2'>
-            <FaEllo className='text-blue-600 h-8 md:h-11' />
-            <h1 className='text-xl font-bold text-gray-100'>Eventify</h1>
+    <nav className="bg-blue-900 border-b border-blue-800 px-4 md:px-6 py-4">
+      <div className="flex justify-between items-center">
+        <div className="flex items-center space-x-4">
+          <Link to="/" className="flex items-center space-x-2">
+            <FaCottonBureau className="text-blue-600 h-8 md:h-11" />
+            <h1 className="text-xl font-bold text-gray-100">Evencity</h1>
           </Link>
         </div>
 
         {/* Desktop Menu */}
-        <div className='hidden md:flex items-center space-x-6'>
+        <div className="hidden md:flex items-center space-x-6">
           <Link
-            to='/my-events'
+            to="/my-events"
             className={`flex items-center space-x-2 ${
               window.location.pathname === "/my-events"
                 ? "text-gray-300 underline underline-offset-4"
                 : "text-gray-100"
             } hover:text-gray-300`}
           >
-            <FaTicketAlt />
+            <FaClipboard />
             <span>My Events</span>
           </Link>
 
           {user?.role === "admin" && (
             <Link
-              to='/dashboard'
+              to="/dashboard"
               className={`flex items-center space-x-2 ${
                 window.location.pathname === "/dashboard"
                   ? "text-gray-300 underline underline-offset-4"
                   : "text-gray-100"
               } hover:text-gray-300`}
             >
-              <FaAccusoft />
+              <FaRegChartBar />
               <span>Dashboard</span>
             </Link>
           )}
 
           <button
             onClick={handleLogout}
-            className='bg-gray-200 px-4 py-2 rounded-lg text-gray-900 hover:bg-gray-300'
+            className="bg-gray-200 px-4 py-2 rounded-lg text-gray-900 hover:bg-gray-300"
           >
             Logout
           </button>
@@ -66,7 +66,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className='md:hidden text-gray-600'
+          className="md:hidden text-gray-200"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -75,31 +75,31 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className='md:hidden mt-4 space-y-4'>
-          <div className='flex flex-col space-y-4'>
+        <div className="md:hidden mt-4 space-y-4">
+          <div className="flex flex-col space-y-4">
             <Link
-              to='/my-events'
-              className='flex items-center space-x-2 px-4 py-2 text-gray-600'
+              to="/my-events"
+              className="flex items-center space-x-2 px-4 py-2 text-gray-600"
               onClick={() => setIsOpen(false)}
             >
-              <FaTicketAlt />
+              <FaClipboard />
               <span>My Events</span>
             </Link>
 
             {user?.role === "admin" && (
               <Link
-                to='/dashboard'
-                className='flex items-center space-x-2 px-4 py-2 text-gray-600'
+                to="/dashboard"
+                className="flex items-center space-x-2 px-4 py-2 text-gray-600"
                 onClick={() => setIsOpen(false)}
               >
-                <FaAccusoft />
+                <FaRegChartBar />
                 <span>Dashboard</span>
               </Link>
             )}
 
             <button
               onClick={handleLogout}
-              className='bg-gray-200 text-gray-900 px-4 py-2 rounded-lg text-center w-full'
+              className="bg-gray-200 text-gray-900 px-4 py-2 rounded-lg text-center w-full"
             >
               Logout
             </button>

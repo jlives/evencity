@@ -68,7 +68,7 @@ const Home = () => {
 
   // Enhanced animation variants
   const pageVariants = {
-    initial: { opacity: 0, backgroundColor: "#111827" }, // Dark background
+    initial: { opacity: 0, backgroundColor: "#fff" },
     animate: {
       opacity: 1,
       transition: {
@@ -105,23 +105,23 @@ const Home = () => {
   return (
     <motion.div
       variants={pageVariants}
-      initial='initial'
-      animate='animate'
-      exit='exit'
-      className='min-h-screen bg-gray-900 text-gray-100'
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      className="min-h-screen bg-white text-gray-100"
     >
       <Navbar />
 
       <motion.div
-        className='mx-auto px-4 py-8 container'
+        className="mx-auto px-4 py-8 container bg-white"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className='flex flex-col lg:flex-row gap-8'>
+        <div className="flex flex-col lg:flex-row gap-8">
           {/* Calendar Section */}
-          <motion.div
-            className='lg:w-[350px] w-full bg-gray-800 rounded-xl p-4 shadow-lg'
+          {/* <motion.div
+            className="lg:w-[350px] w-full bg-white-800 rounded-xl p-4 shadow-lg"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -132,27 +132,27 @@ const Home = () => {
               onPreferencesChange={setSelectedPreferences}
               preferences={categories}
             />
-          </motion.div>
+          </motion.div> */}
 
           {/* Events Section */}
           <motion.div
-            className='flex-1'
+            className="flex-1"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6'>
-              <h2 className='text-2xl font-bold text-gray-100'>
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+              <h2 className="text-2xl font-bold text-gray-700">
                 {selectedDate
                   ? `Events on ${selectedDate.toLocaleDateString()}`
                   : "All Events"}
               </h2>
-              <div className='w-full md:w-64'>
+              <div className="w-full md:w-64">
                 <SearchBar
-                  placeholder='Search events...'
+                  placeholder="Search events..."
                   value={searchQuery}
                   onChange={setSearchQuery}
-                  className='w-full md:w-64 bg-gray-800 text-gray-100'
+                  className="w-full md:w-64 text-gray-100"
                 />
               </div>
             </div>
@@ -167,25 +167,25 @@ const Home = () => {
                   setSelectedPreferences([]);
                   setSearchQuery("");
                 }}
-                className='text-sm text-primary hover:text-primary/90 mt-2 mb-6'
+                className="text-sm text-primary hover:text-primary/90 mt-2 mb-6"
               >
                 Clear filters
               </button>
             )}
 
             <LayoutGroup>
-              <motion.div layout className='max-w-7xl mx-auto py-8'>
-                <AnimatePresence mode='wait'>
+              <motion.div layout className="max-w-7xl mx-auto py-8">
+                <AnimatePresence mode="wait">
                   {loading ? (
                     <motion.div
-                      key='loader'
+                      key="loader"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      className='flex justify-center items-center h-64'
+                      className="flex justify-center items-center h-64"
                     >
                       <motion.div
-                        className='h-12 w-12 border-t-2 border-b-2 border-primary rounded-full'
+                        className="h-12 w-12 border-t-2 border-b-2 border-primary rounded-full"
                         animate={{ rotate: 360 }}
                         transition={{
                           duration: 1,
@@ -196,20 +196,20 @@ const Home = () => {
                     </motion.div>
                   ) : filteredEvents.length === 0 ? (
                     <motion.div
-                      key='no-events'
+                      key="no-events"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
-                      className='text-center py-12'
+                      className="text-center py-12"
                     >
-                      <p className='text-gray-400 text-lg'>No events found</p>
+                      <p className="text-gray-800 text-lg">No events found</p>
                     </motion.div>
                   ) : (
                     <motion.div
                       variants={containerVariants}
-                      initial='hidden'
-                      animate='show'
-                      className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
+                      initial="hidden"
+                      animate="show"
+                      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                     >
                       {filteredEvents.map((event, index) => (
                         <motion.div
@@ -221,7 +221,7 @@ const Home = () => {
                             transition: { type: "spring", stiffness: 300 },
                           }}
                           whileTap={{ scale: 0.98 }}
-                          className='bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-700'
+                          className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-700"
                         >
                           <EventCard
                             id={event._id}
@@ -248,7 +248,7 @@ const Home = () => {
                           <motion.div
                             variants={itemVariants}
                             layout
-                            className='bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-700'
+                            className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-700"
                           >
                             <EventCard
                               create_Button
